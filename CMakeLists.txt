@@ -1,6 +1,10 @@
-cmake_minimum_required(VERSION 3.10)
 project(custom-passes)
+cmake_minimum_required(VERSION 3.22)
 
-set(LLVM_INSTALL_DIR "" CACHE PATH "LLVM installation directory")
+find_package(LLVM REQUIRED CONFIG)
 
-message(FATAL_ERROR ${LLVM_INSTALL_DIR})
+separate_arguments(LLVM_DEFINITIONS_LIST NATIVE_COMMAND ${LLVM_DEFINITIONS})
+add_definitions(${LLVM_DEFINITIONS_LIST})
+include_directories(${LLVM_INCLUDE_DIRS})
+
+add_subdirectory(lib)
