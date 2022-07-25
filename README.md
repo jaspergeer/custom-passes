@@ -1,3 +1,3 @@
 # custom-passes
 ## About
-Custom LLVM passes I am writing as a learning excercise
+Custom LLVM passes written as a learning excercise.
